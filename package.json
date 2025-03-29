@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build:dev": "npm run build -- --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+		"start": "node backend/server.js",
+		"start:dev": "cross-env DEBUG=socket.io:server NODE_ENV=development nodemon backend/server.js",
+		"start:prod": "cross-env NODE_ENV=production nodemon backend/server.js",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "dependencies": {
     "lucide-react": "^0.477.0",
